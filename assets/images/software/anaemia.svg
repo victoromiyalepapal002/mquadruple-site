@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" font-family="Inter,system-ui,Segoe UI,Arial,sans-serif">
+  <!-- ILLUSTRATIVE PREVIEW. Replace by a real screenshot: save it in this folder and change "image" in js/content.js -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#10283A"/><stop offset="1" stop-color="#0A1824"/></linearGradient>
+    <linearGradient id="area" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7FE3C8" stop-opacity=".35"/><stop offset="1" stop-color="#7FE3C8" stop-opacity="0"/></linearGradient>
+    <linearGradient id="rbc" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C0392B"/><stop offset="1" stop-color="#8E1F18"/></linearGradient>
+  </defs>
+  <rect width="1200" height="750" fill="url(#bg)"/>
+  <!-- header -->
+  <rect x="0" y="0" width="1200" height="64" fill="#0B1D2B"/>
+  <circle cx="40" cy="32" r="12" fill="#7FE3C8" opacity=".9"/>
+  <text x="64" y="38" font-size="20" font-weight="700" fill="#F7F4EC">μFluidic Lab</text>
+  <g font-size="15" font-weight="600">
+    <rect x="420" y="16" width="150" height="34" rx="17" fill="#ffffff" fill-opacity=".06"/><text x="445" y="38" fill="#F7F4EC" fill-opacity=".7">Colorimetry</text>
+    <rect x="582" y="16" width="130" height="34" rx="17" fill="#ffffff" fill-opacity=".06"/><text x="606" y="38" fill="#F7F4EC" fill-opacity=".7">Blood</text>
+    <rect x="724" y="16" width="170" height="34" rx="17" fill="#7FE3C8"/><text x="750" y="38" fill="#0B1D2B">Simulation</text>
+  </g>
+  <!-- left controls -->
+  <rect x="32" y="92" width="300" height="626" rx="20" fill="#ffffff" fill-opacity=".05" stroke="#ffffff" stroke-opacity=".1"/>
+  <text x="56" y="132" font-size="14" font-weight="700" letter-spacing="2" fill="#7FE3C8">PATIENT</text>
+  <g font-size="14" fill="#F7F4EC" fill-opacity=".75">
+    <text x="56" y="168">Group</text><rect x="56" y="178" width="252" height="40" rx="10" fill="#050C13" fill-opacity=".6" stroke="#fff" stroke-opacity=".18"/><text x="72" y="204" fill="#F7F4EC">Women, non-pregnant</text>
+    <text x="56" y="256">Starting haemoglobin</text><rect x="56" y="268" width="252" height="8" rx="4" fill="#fff" fill-opacity=".14"/><rect x="56" y="268" width="96" height="8" rx="4" fill="#7FE3C8"/><circle cx="152" cy="272" r="11" fill="#F7F4EC"/><text x="250" y="256" fill="#7FE3C8" font-weight="700">8.2 g/dL</text>
+    <text x="56" y="326">Dietary iron</text><rect x="56" y="338" width="252" height="8" rx="4" fill="#fff" fill-opacity=".14"/><rect x="56" y="338" width="150" height="8" rx="4" fill="#D4AE68"/><circle cx="206" cy="342" r="11" fill="#F7F4EC"/><text x="240" y="326" fill="#D4AE68" font-weight="700">18 mg/day</text>
+    <text x="56" y="396">Vitamin C</text><rect x="56" y="408" width="252" height="8" rx="4" fill="#fff" fill-opacity=".14"/><rect x="56" y="408" width="120" height="8" rx="4" fill="#D4AE68"/><circle cx="176" cy="412" r="11" fill="#F7F4EC"/>
+    <text x="56" y="466">Duration</text><rect x="56" y="478" width="252" height="8" rx="4" fill="#fff" fill-opacity=".14"/><rect x="56" y="478" width="180" height="8" rx="4" fill="#7FE3C8"/><circle cx="236" cy="482" r="11" fill="#F7F4EC"/><text x="262" y="466" fill="#7FE3C8" font-weight="700">90 d</text>
+  </g>
+  <rect x="56" y="540" width="252" height="48" rx="24" fill="#7FE3C8"/><text x="182" y="571" font-size="16" font-weight="700" fill="#0B1D2B" text-anchor="middle">Run simulation</text>
+  <text x="56" y="640" font-size="12" fill="#F7F4EC" fill-opacity=".5">Reference ranges: WHO / NIH</text>
+  <text x="56" y="660" font-size="12" fill="#F7F4EC" fill-opacity=".5">Illustrative preview</text>
+  <!-- chart card -->
+  <rect x="356" y="92" width="560" height="626" rx="20" fill="#ffffff" fill-opacity=".05" stroke="#ffffff" stroke-opacity=".1"/>
+  <text x="384" y="132" font-size="14" font-weight="700" letter-spacing="2" fill="#7FE3C8">HAEMOGLOBIN RECOVERY</text>
+  <g stroke="#fff" stroke-opacity=".1"><path d="M400 200H884M400 280H884M400 360H884M400 440H884M400 520H884M400 600H884"/></g>
+  <g font-size="12" fill="#F7F4EC" fill-opacity=".55"><text x="372" y="204">13</text><text x="372" y="284">12</text><text x="372" y="364">11</text><text x="372" y="444">10</text><text x="378" y="524">9</text><text x="378" y="604">8</text>
+  <text x="400" y="632">0</text><text x="520" y="632">20</text><text x="640" y="632">40</text><text x="760" y="632">60</text><text x="870" y="632">90 d</text></g>
+  <path d="M400 214H884" stroke="#D4AE68" stroke-width="2" stroke-dasharray="7 7"/><text x="884" y="190" font-size="12" fill="#D4AE68" text-anchor="end">Normal ≥ 12 g/dL</text>
+  <path d="M400 580C470 572 520 540 580 480S700 330 760 290 850 236 884 228V640H400Z" fill="url(#area)"/>
+  <path d="M400 580C470 572 520 540 580 480S700 330 760 290 850 236 884 228" fill="none" stroke="#7FE3C8" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="400" cy="580" r="8" fill="#0B1D2B" stroke="#7FE3C8" stroke-width="4"/><circle cx="884" cy="228" r="9" fill="#7FE3C8"/>
+  <!-- stat tiles + tube -->
+  <rect x="940" y="92" width="228" height="120" rx="20" fill="#7FE3C8" fill-opacity=".12" stroke="#7FE3C8" stroke-opacity=".4"/>
+  <text x="962" y="128" font-size="12" font-weight="700" letter-spacing="1.6" fill="#7FE3C8">PREDICTED Hb</text><text x="962" y="176" font-size="42" font-weight="700" fill="#F7F4EC">11.8</text><text x="1040" y="176" font-size="16" fill="#F7F4EC" fill-opacity=".7">g/dL</text>
+  <rect x="940" y="228" width="228" height="120" rx="20" fill="#ffffff" fill-opacity=".05" stroke="#ffffff" stroke-opacity=".1"/>
+  <text x="962" y="264" font-size="12" font-weight="700" letter-spacing="1.6" fill="#D4AE68">GAIN</text><text x="962" y="312" font-size="42" font-weight="700" fill="#F7F4EC">+3.6</text><text x="1052" y="312" font-size="16" fill="#F7F4EC" fill-opacity=".7">g/dL</text>
+  <rect x="940" y="364" width="228" height="354" rx="20" fill="#ffffff" fill-opacity=".05" stroke="#ffffff" stroke-opacity=".1"/>
+  <text x="962" y="400" font-size="12" font-weight="700" letter-spacing="1.6" fill="#7FE3C8">BLOOD LAYERS</text>
+  <g transform="translate(1012 420)">
+    <rect x="0" y="0" width="64" height="270" rx="32" fill="#050C13" fill-opacity=".5" stroke="#fff" stroke-opacity=".25" stroke-width="2"/>
+    <clipPath id="t"><rect x="3" y="3" width="58" height="264" rx="29"/></clipPath>
+    <g clip-path="url(#t)"><rect x="3" y="3" width="58" height="96" fill="#E8C27A" fill-opacity=".85"/><rect x="3" y="99" width="58" height="12" fill="#F3EBD9"/><rect x="3" y="111" width="58" height="160" fill="url(#rbc)"/></g>
+  </g>
+  <g font-size="12" fill="#F7F4EC" fill-opacity=".7"><text x="1090" y="470">Plasma</text><text x="1090" y="533">Buffy coat</text><text x="1090" y="620">Red cells</text></g>
+</svg>

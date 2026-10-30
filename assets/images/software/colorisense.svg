@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" font-family="Inter,system-ui,Segoe UI,Arial,sans-serif">
+  <!-- ILLUSTRATIVE PREVIEW. Replace by a real screenshot: save it in this folder and change "image" in js/content.js -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#10283A"/><stop offset="1" stop-color="#0A1824"/></linearGradient>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#F6E1E8"/><stop offset="1" stop-color="#F7F4EC"/></linearGradient>
+  </defs>
+  <rect width="1200" height="750" fill="url(#bg)"/>
+  <rect width="1200" height="64" fill="#0B1D2B"/>
+  <rect x="28" y="16" width="32" height="32" rx="9" fill="#D4AE68"/><circle cx="44" cy="32" r="8" fill="#0B1D2B"/>
+  <text x="76" y="39" font-size="20" font-weight="700" fill="#F7F4EC">ColoriSense <tspan fill="#D4AE68">Pro</tspan></text>
+  <g font-size="14" font-weight="600"><rect x="760" y="16" width="120" height="34" rx="17" fill="#fff" fill-opacity=".07"/><text x="820" y="38" text-anchor="middle" fill="#F7F4EC" fill-opacity=".8">Upload</text>
+  <rect x="892" y="16" width="130" height="34" rx="17" fill="#D4AE68"/><text x="957" y="38" text-anchor="middle" fill="#0B1D2B">Analyse</text>
+  <rect x="1034" y="16" width="140" height="34" rx="17" fill="#fff" fill-opacity=".07"/><text x="1104" y="38" text-anchor="middle" fill="#F7F4EC" fill-opacity=".8">Export CSV</text></g>
+  <!-- image panel -->
+  <rect x="32" y="92" width="640" height="626" rx="20" fill="#050C13" stroke="#fff" stroke-opacity=".12"/>
+  <rect x="64" y="124" width="576" height="500" rx="12" fill="url(#paper)"/>
+  <g stroke="#9C8A8F" stroke-opacity=".25" stroke-width="2"><path d="M104 190H600M104 300H600M104 410H600M104 520H600"/></g>
+  <!-- dilution series spots -->
+  <g>
+    <circle cx="150" cy="245" r="42" fill="#F1D7DF"/><circle cx="260" cy="245" r="42" fill="#E8B4C6"/><circle cx="370" cy="245" r="42" fill="#DB8FAC"/><circle cx="480" cy="245" r="42" fill="#C96A92"/><circle cx="590" cy="245" r="42" fill="#B24A78"/>
+    <circle cx="150" cy="465" r="42" fill="#EBC7D3"/><circle cx="260" cy="465" r="42" fill="#D9A0B7"/><circle cx="370" cy="465" r="42" fill="#C8789B"/>
+  </g>
+  <!-- ROIs -->
+  <g fill="none" stroke-width="4">
+    <circle cx="150" cy="245" r="50" stroke="#7FE3C8"/><circle cx="260" cy="245" r="50" stroke="#D4AE68"/><circle cx="370" cy="245" r="50" stroke="#D4AE68"/><circle cx="480" cy="245" r="50" stroke="#D4AE68"/><circle cx="590" cy="245" r="50" stroke="#D4AE68"/>
+    <rect x="94" y="415" width="112" height="100" rx="6" stroke="#7FE3C8" stroke-dasharray="8 6"/><circle cx="370" cy="465" r="50" stroke="#fff"/>
+  </g>
+  <g font-size="13" font-weight="700"><rect x="106" y="168" width="58" height="22" rx="6" fill="#7FE3C8"/><text x="135" y="184" text-anchor="middle" fill="#0B1D2B">Blank</text>
+  <rect x="226" y="168" width="68" height="22" rx="6" fill="#D4AE68"/><text x="260" y="184" text-anchor="middle" fill="#0B1D2B">Std 1</text>
+  <rect x="336" y="168" width="68" height="22" rx="6" fill="#D4AE68"/><text x="370" y="184" text-anchor="middle" fill="#0B1D2B">Std 2</text>
+  <rect x="332" y="388" width="76" height="22" rx="6" fill="#fff"/><text x="370" y="404" text-anchor="middle" fill="#0B1D2B">Sample</text></g>
+  <g font-size="13" fill="#F7F4EC" fill-opacity=".6"><text x="64" y="660">Draw rectangular or circular regions · label as Sample, Blank or Standard</text><text x="64" y="684">Illustrative preview</text></g>
+  <!-- calibration chart -->
+  <rect x="696" y="92" width="472" height="330" rx="20" fill="#fff" fill-opacity=".05" stroke="#fff" stroke-opacity=".1"/>
+  <text x="722" y="130" font-size="13" font-weight="700" letter-spacing="2" fill="#D4AE68">CALIBRATION · LOGISTIC</text>
+  <g stroke="#fff" stroke-opacity=".1"><path d="M740 170H1140M740 230H1140M740 290H1140M740 350H1140"/></g>
+  <path d="M740 372C800 366 850 340 900 290S1000 200 1060 182 1130 172 1140 170" fill="none" stroke="#7FE3C8" stroke-width="4" stroke-linecap="round"/>
+  <g fill="#D4AE68"><circle cx="760" cy="370" r="7"/><circle cx="830" cy="352" r="7"/><circle cx="900" cy="292" r="7"/><circle cx="980" cy="224" r="7"/><circle cx="1070" cy="184" r="7"/></g>
+  <circle cx="930" cy="262" r="9" fill="#fff"/><path d="M930 262V372M930 262H740" stroke="#fff" stroke-opacity=".6" stroke-dasharray="5 5"/>
+  <text x="1140" y="402" font-size="13" fill="#7FE3C8" text-anchor="end" font-weight="700">R² = 0.996</text>
+  <!-- table -->
+  <rect x="696" y="438" width="472" height="280" rx="20" fill="#fff" fill-opacity=".05" stroke="#fff" stroke-opacity=".1"/>
+  <text x="722" y="476" font-size="13" font-weight="700" letter-spacing="2" fill="#D4AE68">COLOUR VALUES</text>
+  <g font-size="14" fill="#F7F4EC" fill-opacity=".6"><text x="722" y="510">ROI</text><text x="830" y="510">R</text><text x="900" y="510">G</text><text x="970" y="510">B</text><text x="1050" y="510">Conc.</text></g>
+  <g stroke="#fff" stroke-opacity=".1"><path d="M722 522H1142M722 566H1142M722 610H1142M722 654H1142"/></g>
+  <g font-size="15" fill="#F7F4EC"><text x="722" y="550">Blank</text><text x="830" y="550">241</text><text x="900" y="550">225</text><text x="970" y="550">231</text><text x="1050" y="550">0.0</text>
+  <text x="722" y="594">Std 2</text><text x="830" y="594">219</text><text x="900" y="594">143</text><text x="970" y="594">172</text><text x="1050" y="594">2.5</text>
+  <text x="722" y="638" font-weight="700">Sample</text><text x="830" y="638" font-weight="700">200</text><text x="900" y="638" font-weight="700">120</text><text x="970" y="638" font-weight="700">155</text><text x="1050" y="638" font-weight="700" fill="#7FE3C8">3.8</text></g>
+</svg>
