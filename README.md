@@ -1,68 +1,55 @@
-# M-Quadruple Biotek: Dr A.M. Ogunmolasuyi & Dr Mary A. Adewoyin
+# M-Quadruple Biotek website
 
-A fast, static website. No build step, no frameworks: just HTML, one CSS file and one small JavaScript file.
+A fast static site: HTML pages, one CSS file and a little JavaScript. No build step.
 
-```
-index.html          all page content
-css/styles.css      colours are the variables at the top (:root)
-js/main.js          menu, 3D tilt, publication filters, image viewer
-assets/images/      every photo on the site (replace these)
-assets/logo.svg     logo and favicon
-```
+## Pages
 
-## Other sections you may want to edit (all in `index.html`, search for the comment)
-
-- **Hero text:** `<!-- ============ HERO`. Gold italic words sit inside `<em>...</em>`.
-- **Meet our founder:** `<!-- ============ FOUNDER`. Photo is `assets/images/founder.jpg` (upload a new one with the same name to replace it).
-- **Publications:** each `<article class="pub" data-tags="...">`. Copy one to add a paper. `data-tags` must be one of `sensors`, `malaria`, `bacteria`, `food` (or add a new filter button).
-- **Phone / WhatsApp:** search for `2348039272785` (the WhatsApp link) and `+234 803 927 2785`. Change every match to change the number.
-- **Social icons:** each icon is one `<a>` inside `<div class="social">`. Change the `href`, or delete the `<a>` to remove an icon. The X (Twitter) address is `https://twitter.com/mquadruple`; correct it if the handle differs.
-- **Logo:** `assets/logo.png`. **Favicon:** `assets/favicon.ico`, `favicon-32.png`, `favicon-192.png`, `apple-touch-icon.png` (replace the files, keep the names).
-- **Gallery:** each `<button class="gt ...">`. `w2` = wide, `r2` = tall. Keep the total number of cells a multiple of 4 for a tidy grid.
-- **DNA animation:** each `<canvas class="helix" ...>` is one animation (software heading, founder section, contact). Delete the line to remove it.
-
-## Software section
-
-In `index.html`, find `<!-- ============ SOFTWARE ============`. Each `<article class="sw">` is one app (the first is shown first).
-- **Edit:** change the text, the `href` links, or the `img src` screenshot.
-- **Add:** copy a whole `<article class="sw"> ... </article>` and paste it after the last one.
-- **Remove:** delete its `<article>` block.
-- **Real screenshots:** upload to `assets/images/software/` and change the file name in `img src`. The two `.svg` files there are illustrations.
-- **GitHub button:** remove the `<!--` and `-->` around the "View code" link and paste your repo address.
-- **DNA animation:** delete the `<canvas id="helix" ...>` line to remove it.
-
-## Publish it
-
-**GitHub Pages**
-1. Create a repository and upload everything in this folder (keep the folder structure).
-2. Settings → Pages → Deploy from a branch → `main` / root → Save.
-3. Your site appears at `https://<username>.github.io/<repository>/`. Add your own domain under the same Pages settings.
-
-**Vercel**
-1. Push the folder to GitHub.
-2. On vercel.com choose **Add New → Project**, import the repository.
-3. Framework preset: **Other**. Leave build command and output directory empty. Deploy.
-
-## Replace an image
-
-Open `assets/images/` on GitHub, choose **Add file → Upload files**, and upload a new image **with exactly the same file name**. It replaces the old one. For best speed keep each image under about 150 KB (1400 px on the long side, JPG).
-
-| File | Where it appears |
+| Page | What it shows |
 |---|---|
-| `hero-1.jpg`, `hero-2.jpg`, `hero-3.jpg` | The three floating cards in the top section (portrait, about 3:4) |
-| `profile-ogunmolasuyi.jpg` | Dr Ogunmolasuyi's profile card |
-| `profile-adewoyin.jpg` | Dr Adewoyin's profile card (portrait works best) |
-| `research-presentation.jpg` | "Current work" section |
-| `gallery-training.jpg`, `gallery-sample-prep.jpg`, `gallery-prototypes.jpg`, `gallery-reader.jpg`, `gallery-assay-tubes.jpg` | Gallery (the gallery also reuses `hero-1.jpg`, `hero-2.jpg` and `hero-3.jpg`) |
-| `spare/` | Photos not currently placed on the page |
+| `index.html` | Home: short summaries, each with a "Read more" button |
+| `about.html` | Full about, services, research areas, journey, current work |
+| `software.html` | Full details of each software |
+| `team.html` | Co-founders and the manager |
+| `publications.html` | Every publication, with topic filters |
+| `gallery.html` | Every photo |
 
-## Edit text
+## The 5 files you will edit most
 
-Open `index.html` and search for the words you want to change. Each section is marked with a comment such as `<!-- ============ PEOPLE ============ -->`. To add a publication, copy one `<article class="pub" ...>` block in the Publications section and edit it; `data-tags` controls the filter buttons.
+| File | Edit it to change |
+|---|---|
+| `js/site.js` | Menu, phone number, WhatsApp, email, address, social icons, footer links, logo path. **Changes on every page at once.** |
+| `js/gallery-data.js` | Gallery photos (add, replace, remove, reorder, captions). Photos marked `home: true` also show on the home page. |
+| `js/publications-data.js` | Publications. The home page shows the first 3, the Publications page shows all. |
+| `team.html` | Co-founder and manager text and photos |
+| `index.html` / `about.html` / `software.html` | Page text. Search for the words you want to change. |
 
-## Things to check before going live
+## Common jobs
 
-- **Phone number:** the old site showed two different numbers (+234 803 692 7285 and +234 803 927 2785), so none is shown. Add the correct one in the Contact section.
-- **Dr Adewoyin's biography:** written only from her published papers. Please edit it to her preferred wording and job title.
-- **Link previews:** in `index.html`, change the `og:image` address to a full URL once your domain is live.
-- **Contact form:** it opens the visitor's email app addressed to `mquadruplebiotek@gmail.com`. For a form that sends without an email app, connect a free service such as Formspree and set the form's `action` to its address.
+**Change the phone number / WhatsApp:** `js/site.js` -> `contact` (`phone` is shown, `whatsapp` is digits only, e.g. `2348039272785`).
+
+**Add / replace / remove a gallery photo:** upload the picture to `assets/images/`, then edit its line in `js/gallery-data.js`. To replace a photo keep the same file name. Photos under about 150 KB load fastest.
+
+**Add a publication:** copy one `{ ... },` block in `js/publications-data.js` to the top and edit it.
+
+**Add software:** in `software.html` copy a whole `<article class="sw"> ... </article>` and edit it. Also copy a card on the home page (`<article class="swc">` in `index.html`). Put real screenshots in `assets/images/software/` and change the `img src` (the two `.svg` files are illustrations).
+
+**GitHub "View code" button:** in `software.html`, remove the `<!--` and `-->` around the "View code" link and paste your repository address.
+
+**Add a team photo for Dr Adeniyi:** upload it to `assets/images/`, then in `team.html` follow the comment above the "MANAGER" section.
+
+**Change the logo:** replace `assets/logo.png` (keep the name). **Favicon:** replace `assets/favicon.ico`, `favicon-32.png`, `favicon-192.png`, `apple-touch-icon.png`.
+
+**3D DNA / molecule animations:** each `<canvas class="helix">` or `<canvas class="mol">` is one animation. Delete the line to remove it.
+
+**Gold italic words in headings:** wrap them in `<em>...</em>`.
+
+## Publish
+
+**Vercel:** push the folder to GitHub, then Vercel -> Add New -> Project -> import. Framework preset **Other**, leave build command and output directory empty -> Deploy. Later GitHub edits redeploy automatically.
+
+## Before going live
+
+- **Link previews:** in each page's `<head>`, change `og:image` to the full address of `assets/og-image.png` once your domain is live.
+- **X (Twitter) link:** `js/site.js` uses `https://twitter.com/mquadruple`. Correct it if the handle is different, and add GitHub if you like.
+- **Contact form:** it opens the visitor's email app. To send directly, put a Formspree address in `contact.formEndpoint` in `js/site.js`.
+- **Founder photo:** `assets/images/founder.jpg` shows a lab coat reading "Ricores University" and posters with garbled text. Consider replacing it with a real photo (same file name).

@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Software | M-Quadruple Biotek</title>
+<meta name="description" content="Free-to-try web software from M-Quadruple Biotek: anaemia simulation and blood analysis, and colorimetric analysis.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Software | M-Quadruple Biotek">
+<meta property="og:description" content="Free-to-try web software from M-Quadruple Biotek: anaemia simulation and blood analysis, and colorimetric analysis.">
+<!-- For link previews, replace with the full address once your domain is live, e.g. https://yourdomain.com/assets/og-image.png -->
+<meta property="og:image" content="assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0B1D2B">
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="assets/favicon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="css/styles.css">
+<script src="js/site.js"></script>
+<script src="js/main.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<!-- Header, footer and WhatsApp button are built from js/site.js -->
+<header id="site-header"></header>
+<main id="main">
+<noscript><div class="wrap" style="padding:140px 0"><h1>M-Quadruple Biotek Ltd</h1><p>Please turn on JavaScript to view this site, or email mquadruplebiotek@gmail.com.</p></div></noscript>
+<section class="page-hero">
+  <canvas class="helix helix-hero" data-theme="dark" data-rot="-0.35" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <p class="crumbs"><a href="index.html">Home</a> <span>/</span> Software</p>
+    <p class="eyebrow">Our software</p>
+    <h1>Tools that turn a photo into <em>a measurement.</em></h1>
+    <p class="sub">Free-to-try web apps from our lab. Open them in any browser, no installation needed.</p>
+  </div>
+</section>
+
+<!-- ============ SOFTWARE ============
+     HOW TO EDIT: each <article class="sw" id="anaemia"> is one app.
+     - Change text, the link (href), or the screenshot (img src) right here.
+     - ADD an app: copy a whole <article class="sw"> ... </article>, paste it after the last one.
+     - REMOVE an app: delete its whole <article> block.
+     - The first article is shown first. Add class "flip" to put the picture on the left.
+     - GitHub button: remove the comment marks around the "View code" link and paste your repo address. -->
+<section class="sec software" id="software-list">
+  <div class="wrap">
+    <div class="sw-list">
+
+      <!-- ===== APP 1: ANAEMIA (shown first) ===== -->
+      <article class="sw">
+        <div class="sw-copy rv">
+          <div class="sw-meta"><span class="pill pill-hot">Featured &middot; Live</span><span class="kick">Anaemia simulation &amp; blood analysis</span></div>
+          <h3>&micro;Fluidic Lab Analyser Pro</h3>
+          <p class="sw-tag">Blood analysis and anaemia recovery simulation from a photo of your test strip.</p>
+          <p class="sw-desc">A browser-based lab tool that turns photographs of microfluidic paper devices and blood-separation strips into quantitative results, and simulates how haemoglobin recovers with diet and supplementation.</p>
+          <ul class="checks">
+            <li>Blood analysis of red cell, plasma and buffy-coat layers, with haematocrit and haemoglobin estimates graded from severe to normal</li>
+            <li>Haemoglobin recovery simulation by patient group, dietary iron, vitamin C and inhibitors, with WHO and NIH reference values</li>
+            <li>Colorimetric assays for iron, glucose and Bradford protein, with calibration curves</li>
+            <li>Export CSV, JSON, PDF reports and PNG charts. Works offline after first load</li>
+          </ul>
+          <p class="sw-aud"><b>Built for</b> Laboratory researchers, field health workers screening for anaemia, and nutrition planners.</p>
+          <div class="actions">
+            <a class="btn btn-green" href="https://anaemia-simulation.vercel.app/" target="_blank" rel="noopener">Launch the app &nearr;</a>
+            <!-- <a class="btn btn-ghost" href="PASTE-GITHUB-LINK-HERE" target="_blank" rel="noopener">View code</a> -->
+          </div>
+        </div>
+        <div class="sw-shot rv" style="--d:.1s">
+          <a class="browser" href="https://anaemia-simulation.vercel.app/" target="_blank" rel="noopener" aria-label="Open the anaemia software">
+            <div class="bbar"><i></i><i></i><i></i><span class="url">anaemia-simulation.vercel.app</span></div>
+            <!-- To use a real screenshot: upload it to assets/images/software/ and change the file name below -->
+            <img src="assets/images/software/anaemia.svg" alt="Preview of the Fluidic Lab Analyser Pro simulation screen" width="1200" height="750">
+          </a>
+          <ul class="tags center"><li>Anaemia</li><li>Haematocrit</li><li>Haemoglobin</li><li>&micro;PAD</li><li>Works offline</li></ul>
+        </div>
+      </article>
+
+      <!-- ===== APP 2: COLORISENSE ===== -->
+      <article class="sw flip" id="colorisense">
+        <div class="sw-copy rv">
+          <div class="sw-meta"><span class="pill">Live</span><span class="kick">Colorimetric analysis platform</span></div>
+          <h3>ColoriSense Pro</h3>
+          <p class="sw-tag">Image-based biosensor quantification using advanced regression models.</p>
+          <p class="sw-desc">Measures colour in biosensor and &micro;PAD photographs and converts the readings into concentration estimates using calibration curves.</p>
+          <ul class="checks">
+            <li>Draw rectangular or circular regions of interest and label them Sample, Blank or Standard</li>
+            <li>Four analysis modes: sample vs sample, vs blank (Beer&ndash;Lambert absorbance), full quantitative, and vs standard</li>
+            <li>Linear, logistic and Michaelis&ndash;Menten calibration models</li>
+            <li>RGB, HSV and CIELAB charts, pixel histograms, and PNG and CSV export</li>
+          </ul>
+          <p class="sw-aud"><b>Built for</b> Researchers and students in biotechnology, biosensing and diagnostics labs.</p>
+          <p class="sw-note">Free trial of 10 analyses. Unlock the full version with a licence key.</p>
+          <div class="actions">
+            <a class="btn btn-green" href="https://colorisense.vercel.app/" target="_blank" rel="noopener">Launch the app &nearr;</a>
+            <!-- <a class="btn btn-ghost" href="PASTE-GITHUB-LINK-HERE" target="_blank" rel="noopener">View code</a> -->
+          </div>
+        </div>
+        <div class="sw-shot rv" style="--d:.1s">
+          <a class="browser" href="https://colorisense.vercel.app/" target="_blank" rel="noopener" aria-label="Open ColoriSense Pro">
+            <div class="bbar"><i></i><i></i><i></i><span class="url">colorisense.vercel.app</span></div>
+            <img src="assets/images/software/colorisense.svg" alt="Preview of the ColoriSense Pro analysis screen" width="1200" height="750" loading="lazy">
+          </a>
+          <ul class="tags center"><li>Colorimetry</li><li>Calibration</li><li>Regression</li><li>&micro;PAD</li></ul>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<div id="cta"></div>
+</main>
+<footer id="site-footer"></footer>
+</body>
+</html>
