@@ -30,16 +30,16 @@ section[id]{scroll-margin-top:72px}
 .site-header.solid{background:rgba(247,244,236,.93);backdrop-filter:saturate(1.4) blur(12px);-webkit-backdrop-filter:saturate(1.4) blur(12px);color:var(--ink);box-shadow:0 1px 0 var(--line)}
 .bar{display:flex;align-items:center;justify-content:space-between;gap:24px;height:76px}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-family:var(--serif);font-weight:600;font-size:23px;line-height:1.05}
-.brand img{width:40px;height:40px}
+.brand img{width:auto;height:40px;box-sizing:content-box;background:#fff;border-radius:11px;padding:5px 8px;box-shadow:0 6px 16px -8px rgba(0,0,0,.5)}
 .brand small{display:block;font-family:var(--sans);font-weight:500;font-size:10.5px;letter-spacing:.17em;text-transform:uppercase;opacity:.75;margin-top:3px}
 .nav{display:flex;align-items:center;gap:2px}
-.nav a{text-decoration:none;font-size:15px;font-weight:500;padding:12px 14px;border-radius:999px;opacity:.9;transition:opacity .2s,background .2s}
+.nav a{white-space:nowrap;text-decoration:none;font-size:15px;font-weight:500;padding:12px 14px;border-radius:999px;opacity:.9;transition:opacity .2s,background .2s}
 .nav a:hover{opacity:1;background:rgba(127,227,200,.18)}
 .nav a.cta{background:var(--mint);color:var(--ink);font-weight:600;margin-left:8px;opacity:1}
 .site-header.solid .nav a.cta{background:var(--green);color:#fff}
 .menu-btn{display:none;width:48px;height:48px;border-radius:50%;border:1px solid currentColor;background:transparent;color:inherit;cursor:pointer;align-items:center;justify-content:center;flex-direction:column;gap:5px}
 .menu-btn span{display:block;width:20px;height:2px;background:currentColor;border-radius:2px}
-@media(max-width:980px){
+@media(max-width:1120px){
   .menu-btn{display:inline-flex}
   .nav{position:fixed;inset:76px 0 auto 0;flex-direction:column;align-items:stretch;background:var(--ink);padding:14px 24px 28px;gap:2px;opacity:0;transform:translateY(-8px);pointer-events:none;transition:opacity .25s,transform .25s;border-bottom:1px solid var(--line-l)}
   .nav.open{opacity:1;transform:none;pointer-events:auto}
@@ -297,6 +297,59 @@ dialog.lb::backdrop{background:rgba(5,12,19,.88)}
   .browser,.sw.flip .browser{transform:none}
   .helix{display:none}
 }
+
+/* ---------- helix canvases (light 3D DNA) ---------- */
+.helix-bg{position:absolute;left:-6%;top:0;width:52%;height:100%;opacity:.55;pointer-events:none}
+.helix-corner{position:absolute;right:-40px;top:-30px;width:340px;height:240px;opacity:.28;pointer-events:none}
+.founder,.contact{position:relative;overflow:hidden}
+.founder .wrap,.contact .wrap{position:relative;z-index:1}
+
+/* ---------- founder ---------- */
+.founder-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:72px;align-items:center}
+.fphoto{perspective:1300px}
+.fframe{position:relative;border-radius:30px;overflow:hidden;border:1px solid rgba(212,174,104,.55);box-shadow:0 50px 80px -34px rgba(0,0,0,.75),0 0 0 10px rgba(127,227,200,.06);transform:rotateX(var(--rx,0deg)) rotateY(calc(-5deg + var(--ry,0deg)));transition:transform .3s ease-out;background:var(--ink-2)}
+.fframe img{width:100%;height:auto;aspect-ratio:2/3;object-fit:cover;object-position:50% 20%}
+.fframe::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(11,29,43,.55));pointer-events:none}
+.fbadge{position:absolute;z-index:1;left:18px;bottom:18px;padding:9px 16px;border-radius:999px;font:600 12px var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--ink);background:var(--mint)}
+.fcopy .h2{margin-top:14px}
+.fcopy .role{color:var(--mint);font-weight:600;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;margin-top:14px}
+.fcopy>p:not(.eyebrow):not(.role){margin-top:18px;color:rgba(247,244,236,.82);font-size:17px}
+.ffacts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:30px}
+.ffacts li{padding:16px 18px;border-radius:18px;border:1px solid var(--line-l);background:rgba(255,255,255,.05)}
+.ffacts b{display:block;font-family:var(--serif);font-size:30px;line-height:1.05;color:var(--gold);font-weight:600}
+.ffacts span{display:block;margin-top:4px;font-size:13px;color:rgba(247,244,236,.72);line-height:1.35}
+.fcopy .actions{margin-top:30px}
+.fcopy .social{margin-top:26px}
+@media(max-width:900px){
+  .founder-grid{grid-template-columns:1fr;gap:44px}
+  .fphoto{max-width:420px;margin-inline:auto;width:100%}
+  .fframe{transform:none}
+  .helix-bg{left:-30%;width:100%;opacity:.3}
+  .helix-corner{display:none}
+  .ffacts{grid-template-columns:1fr}
+}
+
+/* ---------- social + whatsapp ---------- */
+.social{display:flex;flex-wrap:wrap;gap:10px}
+.social a{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--line-l);color:var(--paper);background:rgba(255,255,255,.04);transition:transform .25s,background .25s,color .25s,border-color .25s}
+.social a:hover{transform:translateY(-3px);background:var(--mint);color:var(--ink);border-color:var(--mint)}
+.social a:first-child:hover{background:#25D366;border-color:#25D366;color:#fff}
+.social svg{width:20px;height:20px;fill:currentColor}
+.social svg.st,.btn svg.st{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.btn-wa{background:#25D366;color:#06301a;box-shadow:0 12px 30px -14px rgba(37,211,102,.8)}
+.btn-wa:hover{background:#3BE47B}
+.btn-wa svg{width:20px;height:20px;fill:currentColor;stroke:none}
+.wa-big{margin-top:30px}
+.cl .social{margin-top:2px}
+.cl .social a{border-bottom:1px solid var(--line-l)}
+.foot-social{margin-top:28px}
+.wa-float{position:fixed;right:18px;bottom:18px;z-index:60;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:#25D366;color:#fff;box-shadow:0 14px 30px -10px rgba(0,0,0,.55);transition:transform .25s}
+.wa-float:hover{transform:scale(1.08)}
+.wa-float svg{width:30px;height:30px;fill:currentColor}
+.wa-float::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid #25D366;animation:wapulse 2.4s ease-out infinite}
+@keyframes wapulse{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.6);opacity:0}}
+.about-grid .actions{margin-top:28px}
+@media(max-width:1180px){.nav a{padding:11px 10px;font-size:14.5px}}
 
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}

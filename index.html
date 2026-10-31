@@ -11,7 +11,10 @@
 <!-- For link previews, replace with the full address once your domain is live, e.g. https://yourname.com/assets/images/gallery-training.jpg -->
 <meta property="og:image" content="assets/images/gallery-training.jpg">
 <meta name="theme-color" content="#0B1D2B">
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="assets/favicon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600&display=swap">
@@ -25,13 +28,14 @@
 <header class="site-header">
   <div class="wrap bar">
     <a class="brand" href="#top" aria-label="M-Quadruple Biotek, home">
-      <img src="assets/logo.svg" alt="" width="40" height="40">
+      <img src="assets/logo.png" alt="" width="52" height="41">
       <span>M-Quadruple<small>Biotek Ltd</small></span>
     </a>
     <button class="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
     <nav class="nav" id="nav" aria-label="Main">
       <a href="#software">Software</a>
       <a href="#about">About</a>
+      <a href="#founder">Founder</a>
       <a href="#people">Our team</a>
       <a href="#research">Research</a>
       <a href="#publications">Publications</a>
@@ -48,8 +52,8 @@
   <div class="wrap hero-grid">
     <div>
       <p class="eyebrow">Biosensors &middot; Diagnostics &middot; Genomic surveillance</p>
-      <h1>Accessible biosensors for <em>infectious disease.</em></h1>
-      <p class="sub">The research partnership of Dr A.M. Ogunmolasuyi and Dr Mary A. Adewoyin, building paper-based microfluidic and aptamer biosensors to bring accurate testing for malaria, schistosomiasis and other infections closer to patients.</p>
+      <h1>Biosensor Biotechnology and <em>Genomic Surveillance</em></h1>
+      <p class="sub">We're experienced researchers at the forefront of revolutionizing diagnostic research through groundbreaking innovation and pioneering advancements.</p>
       <div class="actions">
         <a class="btn btn-mint" href="#software">Try our anaemia software</a>
         <a class="btn btn-line" href="#research">Explore our research</a>
@@ -98,7 +102,7 @@
         <h2 class="h2 rv">Tools that turn a photo into <em>a measurement.</em></h2>
         <p class="lead rv">Free-to-try web apps from our lab. Open them in any browser, no installation needed.</p>
       </div>
-      <canvas id="helix" class="helix" aria-hidden="true"></canvas>
+      <canvas class="helix" data-theme="light" data-rot="-0.9" aria-hidden="true"></canvas>
     </div>
 
     <div class="sw-list">
@@ -174,6 +178,7 @@
         <h2 class="h2">Research that turns into <em>tests people can use.</em></h2>
         <p>M-Quadruple Biotek Ltd is a biotechnology company in Akure, Nigeria, focused on biosensor technology and genomic surveillance for infectious diseases.</p>
         <p>Our work grew out of doctoral and postdoctoral research in medical diagnostics: from a paper-based malaria test developed at Rhodes University to an international consortium with the University of Glasgow and collaborators across Nigeria.</p>
+        <div class="actions"><a class="btn btn-green" href="#publications">View our publications</a><a class="btn btn-ghost" href="#founder">Meet our founder</a></div>
       </div>
       <div class="mission rv" style="--d:.1s">
         <blockquote>
@@ -194,6 +199,37 @@
       <article class="sv rv" style="--d:.08s"><div class="n">02</div><h3>Aptamer Research</h3><p>Aptamer research services, including SELEX-based work for therapeutic and diagnostic applications.</p></article>
       <article class="sv rv" style="--d:.16s"><div class="n">03</div><h3>Training</h3><p>Workshops and professional training in fabricating colorimetric, electrochemical and molecular biosensors.</p></article>
       <article class="sv rv" style="--d:.24s"><div class="n">04</div><h3>Laboratory Equipment</h3><p>Research merchandise and lab equipment: thermocyclers, spectrophotometers and complete laboratory set-ups.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOUNDER ============ -->
+<section class="sec dark founder" id="founder">
+  <canvas class="helix helix-bg" data-theme="dark" data-rot="-1.25" aria-hidden="true"></canvas>
+  <div class="wrap founder-grid">
+    <div class="fphoto rv">
+      <div class="fframe">
+        <img src="assets/images/founder.jpg" alt="Dr Adewoyin M. Ogunmolasuyi, founder of M-Quadruple Biotek, in the laboratory" width="732" height="1100" loading="lazy">
+        <span class="fbadge">Founder &amp; CEO</span>
+      </div>
+    </div>
+    <div class="fcopy rv" style="--d:.1s">
+      <p class="eyebrow">Meet our founder</p>
+      <h2 class="h2">Dr Adewoyin M. <em>Ogunmolasuyi</em></h2>
+      <p class="role">Founder &amp; CEO &middot; PhD</p>
+      <p>Dr Adewoyin M. Ogunmolasuyi is an emerging African researcher with global ambitions in medical diagnostics, working where microfluidics meets biosensing. He leads M-Quadruple Biotek Ltd, turning laboratory research into low-cost tests that can be used where they are needed most.</p>
+      <p>He completed his doctoral research from 2017 to 2020 at the Biotechnology Innovation Centre, Rhodes University, South Africa, in the BioSens Research Group, funded by a TETFund scholarship and UNICEF. There he built a microfluidic paper analytical device (&micro;PAD) to detect <em>Plasmodium falciparum</em> lactate dehydrogenase, using electrochemical methods and bioconjugation chemistries.</p>
+      <p>In 2020 he received a USAID grant through the African Research Network for Neglected Tropical Diseases to develop low-cost, point-of-care tests for schistosomiasis. Today he leads a multiplexed detection system for malaria and schistosomiasis co-infection, within an international consortium with the University of Glasgow, Rhodes University and collaborators across Nigeria.</p>
+      <ul class="ffacts">
+        <li><b>2017&ndash;2020</b><span>PhD, Rhodes University</span></li>
+        <li><b>$29,689</b><span>USAID&ndash;ARNTD grant, 2020</span></li>
+        <li><b>10</b><span>Publications listed</span></li>
+      </ul>
+      <div class="actions">
+        <a class="btn btn-mint" href="#publications">Read his publications</a>
+        <a class="btn btn-wa" href="https://wa.me/2348039272785?text=Hello%20M-Quadruple%20Biotek%2C%20I%20would%20like%20to%20make%20an%20enquiry." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35zM12.05 21.8h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88zM20.52 3.45A11.8 11.8 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.16-3.48-8.4z"/></svg>Chat on WhatsApp</a>
+      </div>
+      <div class="social"><a href="https://wa.me/2348039272785?text=Hello%20M-Quadruple%20Biotek%2C%20I%20would%20like%20to%20make%20an%20enquiry." target="_blank" rel="noopener" aria-label="Chat on WhatsApp" title="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35zM12.05 21.8h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88zM20.52 3.45A11.8 11.8 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.16-3.48-8.4z"/></svg></a><a href="https://www.linkedin.com/in/adewoyin-ogunmolasuyi-phd-7495b8127" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a><a href="https://twitter.com/mquadruple" target="_blank" rel="noopener" aria-label="X (Twitter)" title="X (Twitter)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a><a href="https://scholar.google.com/citations?user=0CtIxzgAAAAJ&amp;hl=en" target="_blank" rel="noopener" aria-label="Google Scholar" title="Google Scholar"><svg class="st" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 9l10-5 10 5-10 5zM6 11.5V16c0 1.5 3 3 6 3s6-1.5 6-3v-4.5M22 9v6"/></svg></a><a href="mailto:mquadruplebiotek@gmail.com" aria-label="Email" title="Email"><svg class="st" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v12H3zM3.5 7l8.5 6.5L20.5 7"/></svg></a><a href="tel:+2348039272785" aria-label="Call" title="Call"><svg class="st" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></a></div>
     </div>
   </div>
 </section>
@@ -295,7 +331,8 @@
       <button class="chip" data-filter="sensors" aria-pressed="false">Sensors</button>
       <button class="chip" data-filter="malaria" aria-pressed="false">Malaria</button>
       <button class="chip" data-filter="bacteria" aria-pressed="false">Bacteria</button>
-      <span class="count" id="pub-count" aria-live="polite">6 publications</span>
+      <button class="chip" data-filter="food" aria-pressed="false">Food &amp; biotech</button>
+      <span class="count" id="pub-count" aria-live="polite">10 publications</span>
     </div>
 
     <div class="pubs">
@@ -354,6 +391,50 @@
         <a class="btn btn-ghost" href="https://doi.org/10.1186/s12936-022-04187-6" target="_blank" rel="noopener">View paper</a>
       </article>
 
+      <article class="pub" data-tags="food">
+        <div class="yr">2017</div>
+        <div>
+          <h3>Co-immobilization of cellulase extracted from <em>Schizophyllum commune</em> and <em>Saccharomyces cerevisiae</em> in the bioconversion of sugar cane bagasse to ethanol</h3>
+          <p class="au">Evans Egwim, Rahinat Garba, <b>Adewoyin Martin Ogunmolasuyi</b>, Tope Caleb</p>
+          <p class="jr">Nigerian Journal of Technological Research, 105&ndash;114</p>
+          <ul class="tags"><li>Food &amp; biotech</li></ul>
+        </div>
+        <a class="btn btn-ghost" href="https://doi.org/10.4314/njtr.v12i1.9" target="_blank" rel="noopener">View paper</a>
+      </article>
+
+      <article class="pub" data-tags="food">
+        <div class="yr">2016</div>
+        <div>
+          <h3>A comparative study of functional and structural properties of starch extracted from <em>Dioscorea rotundata</em> and <em>Colocasia esculenta</em></h3>
+          <p class="au"><b>Adewoyin Martin Ogunmolasuyi</b>, Evans C. Egwim, <b>Mary A. Adewoyin</b>, Oluwapemi Awoyinka</p>
+          <p class="jr">Starch - St&auml;rke, 68(7&ndash;8), 771&ndash;777</p>
+          <ul class="tags"><li>Food &amp; biotech</li></ul>
+        </div>
+        <a class="btn btn-ghost" href="https://doi.org/10.1002/star.201500280" target="_blank" rel="noopener">View paper</a>
+      </article>
+
+      <article class="pub" data-tags="food">
+        <div class="yr">2016</div>
+        <div>
+          <h3>Effect of phosphoric acid treatment on physicochemical, functional, and structural properties of starch extracted from yam (<em>Dioscorea rotundata</em>)</h3>
+          <p class="au"><b>Adewoyin Martin Ogunmolasuyi</b>, Evans Chidi Egwim, <b>Mary Ayobami Adewoyin</b>, Josiah Ekpeno Nkop</p>
+          <p class="jr">International Journal of Food Properties, 20(5), 1062&ndash;1073</p>
+          <ul class="tags"><li>Food &amp; biotech</li></ul>
+        </div>
+        <a class="btn btn-ghost" href="https://doi.org/10.1080/10942912.2016.1199035" target="_blank" rel="noopener">View paper</a>
+      </article>
+
+      <article class="pub" data-tags="food">
+        <div class="yr">2015</div>
+        <div>
+          <h3>Modification of starch extracted from cassava with acidified ethanol</h3>
+          <p class="au"><b>Ogunmolasuyi Martin</b></p>
+          <p class="jr">British Journal of Pharmaceutical Research, 8(4), 1&ndash;7</p>
+          <ul class="tags"><li>Food &amp; biotech</li></ul>
+        </div>
+        <a class="btn btn-ghost" href="https://doi.org/10.9734/bjpr/2015/16303" target="_blank" rel="noopener">View paper</a>
+      </article>
+
       <article class="pub" data-tags="sensors malaria">
         <div class="yr">PhD</div>
         <div>
@@ -407,12 +488,17 @@
       <button class="gt w2 rv" data-full="assets/images/gallery-assay-tubes.jpg" data-alt="Four labelled tubes with pink colorimetric assay results" data-cap="Colorimetric assay tubes"><img src="assets/images/gallery-assay-tubes.jpg" alt="Four labelled tubes with pink colorimetric assay results" width="768" height="1024" loading="lazy" style="object-position:50% 18%"><span>Colorimetric assay tubes</span></button>
       <button class="gt rv" data-full="assets/images/hero-3.jpg" data-alt="Three paper microfluidic strips carrying blood samples" data-cap="Whole-blood samples on paper strips"><img src="assets/images/hero-3.jpg" alt="Three paper microfluidic strips carrying blood samples" width="810" height="1080" loading="lazy"><span>Whole-blood samples on paper strips</span></button>
       <button class="gt rv" data-full="assets/images/hero-2.jpg" data-alt="A researcher loading a sample with a pipette" data-cap="Loading a sample"><img src="assets/images/hero-2.jpg" alt="A researcher loading a sample with a pipette" width="584" height="876" loading="lazy" style="object-position:50% 30%"><span>Loading a sample</span></button>
+      <button class="gt w2 r2 rv" data-full="assets/images/founder.jpg" data-alt="Dr Adewoyin M. Ogunmolasuyi in a laboratory coat" data-cap="Our founder in the laboratory"><img src="assets/images/founder.jpg" alt="Dr Adewoyin M. Ogunmolasuyi in a laboratory coat" width="732" height="1100" loading="lazy" style="object-position:50% 22%"><span>Our founder in the laboratory</span></button>
+      <button class="gt w2 rv" data-full="assets/images/gallery-conference.jpg" data-alt="Dr Ogunmolasuyi with colleagues at an international conference" data-cap="At a conference outside Nigeria"><img src="assets/images/gallery-conference.jpg" alt="Dr Ogunmolasuyi with colleagues at an international conference" width="828" height="621" loading="lazy" style="object-position:50% 35%"><span>At a conference outside Nigeria</span></button>
+      <button class="gt rv" data-full="assets/images/gallery-pipetting.jpg" data-alt="Researchers in white coats loading samples with pipettes" data-cap="Bench work in the laboratory"><img src="assets/images/gallery-pipetting.jpg" alt="Researchers in white coats loading samples with pipettes" width="750" height="1000" loading="lazy" style="object-position:50% 28%"><span>Bench work in the laboratory</span></button>
+      <button class="gt rv" data-full="assets/images/gallery-lab-room.jpg" data-alt="Team members working at the benches in the laboratory" data-cap="The team at work in the laboratory"><img src="assets/images/gallery-lab-room.jpg" alt="Team members working at the benches in the laboratory" width="750" height="1000" loading="lazy" style="object-position:50% 55%"><span>The team at work in the laboratory</span></button>
     </div>
   </div>
 </section>
 
 <!-- ============ CONTACT ============ -->
-<section class="sec dark" id="contact">
+<section class="sec dark contact" id="contact">
+  <canvas class="helix helix-corner" data-theme="dark" data-rot="-0.55" aria-hidden="true"></canvas>
   <div class="wrap contact-grid">
     <div class="rv">
       <p class="eyebrow">Contact</p>
@@ -420,9 +506,11 @@
       <p class="lead">Book a consultation, ask about training and equipment, or discuss a research collaboration.</p>
       <dl class="cl">
         <div><dt>Email</dt><dd><a href="mailto:mquadruplebiotek@gmail.com">mquadruplebiotek@gmail.com</a></dd></div>
+        <div><dt>Phone &amp; WhatsApp</dt><dd><a href="tel:+2348039272785">+234 803 927 2785</a></dd></div>
         <div><dt>Location</dt><dd>Academic Building, Ipinsa, Akure,<br>Ondo State, Nigeria</dd></div>
-        <div><dt>Elsewhere</dt><dd><a href="https://www.linkedin.com/in/adewoyin-ogunmolasuyi-phd-7495b8127" target="_blank" rel="noopener">LinkedIn</a> &nbsp;&middot;&nbsp; <a href="https://scholar.google.com/citations?user=0CtIxzgAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a></dd></div>
+        <div><dt>Follow us</dt><dd><div class="social"><a href="https://wa.me/2348039272785?text=Hello%20M-Quadruple%20Biotek%2C%20I%20would%20like%20to%20make%20an%20enquiry." target="_blank" rel="noopener" aria-label="Chat on WhatsApp" title="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35zM12.05 21.8h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88zM20.52 3.45A11.8 11.8 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.16-3.48-8.4z"/></svg></a><a href="https://www.linkedin.com/in/adewoyin-ogunmolasuyi-phd-7495b8127" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a><a href="https://twitter.com/mquadruple" target="_blank" rel="noopener" aria-label="X (Twitter)" title="X (Twitter)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a><a href="https://scholar.google.com/citations?user=0CtIxzgAAAAJ&amp;hl=en" target="_blank" rel="noopener" aria-label="Google Scholar" title="Google Scholar"><svg class="st" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 9l10-5 10 5-10 5zM6 11.5V16c0 1.5 3 3 6 3s6-1.5 6-3v-4.5M22 9v6"/></svg></a><a href="mailto:mquadruplebiotek@gmail.com" aria-label="Email" title="Email"><svg class="st" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v12H3zM3.5 7l8.5 6.5L20.5 7"/></svg></a><a href="tel:+2348039272785" aria-label="Call" title="Call"><svg class="st" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></a></div></dd></div>
       </dl>
+      <a class="btn btn-wa wa-big" href="https://wa.me/2348039272785?text=Hello%20M-Quadruple%20Biotek%2C%20I%20would%20like%20to%20make%20an%20enquiry." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35zM12.05 21.8h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88zM20.52 3.45A11.8 11.8 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.16-3.48-8.4z"/></svg>Chat with us on WhatsApp</a>
     </div>
 
     <form class="form rv" id="contact-form" data-to="mquadruplebiotek@gmail.com" action="mailto:mquadruplebiotek@gmail.com" method="post" enctype="text/plain" style="--d:.1s">
@@ -450,14 +538,18 @@
 <footer class="foot">
   <div class="wrap">
     <div class="foot-top">
-      <a class="brand" href="#top"><img src="assets/logo.svg" alt="" width="40" height="40"><span>M-Quadruple<small>Biotek Ltd</small></span></a>
+      <a class="brand" href="#top"><img src="assets/logo.png" alt="" width="52" height="41"><span>M-Quadruple<small>Biotek Ltd</small></span></a>
       <nav aria-label="Footer">
-        <a href="#software">Software</a><a href="#about">About</a><a href="#people">Our team</a><a href="#research">Research</a><a href="#publications">Publications</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a>
+        <a href="#software">Software</a><a href="#about">About</a><a href="#founder">Founder</a><a href="#people">Our team</a><a href="#research">Research</a><a href="#publications">Publications</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a>
       </nav>
     </div>
+    <div class="foot-social"><div class="social"><a href="https://wa.me/2348039272785?text=Hello%20M-Quadruple%20Biotek%2C%20I%20would%20like%20to%20make%20an%20enquiry." target="_blank" rel="noopener" aria-label="Chat on WhatsApp" title="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35zM12.05 21.8h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88zM20.52 3.45A11.8 11.8 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.16-3.48-8.4z"/></svg></a><a href="https://www.linkedin.com/in/adewoyin-ogunmolasuyi-phd-7495b8127" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a><a href="https://twitter.com/mquadruple" target="_blank" rel="noopener" aria-label="X (Twitter)" title="X (Twitter)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a><a href="https://scholar.google.com/citations?user=0CtIxzgAAAAJ&amp;hl=en" target="_blank" rel="noopener" aria-label="Google Scholar" title="Google Scholar"><svg class="st" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 9l10-5 10 5-10 5zM6 11.5V16c0 1.5 3 3 6 3s6-1.5 6-3v-4.5M22 9v6"/></svg></a><a href="mailto:mquadruplebiotek@gmail.com" aria-label="Email" title="Email"><svg class="st" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v12H3zM3.5 7l8.5 6.5L20.5 7"/></svg></a><a href="tel:+2348039272785" aria-label="Call" title="Call"><svg class="st" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></a></div></div>
     <p class="copy">&copy; <span id="year">2026</span> M-Quadruple Biotek Ltd. Advancing diagnostics with accessible biosensor technology.</p>
   </div>
 </footer>
+
+<!-- Floating WhatsApp button -->
+<a class="wa-float" href="https://wa.me/2348039272785?text=Hello%20M-Quadruple%20Biotek%2C%20I%20would%20like%20to%20make%20an%20enquiry." target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35zM12.05 21.8h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88zM20.52 3.45A11.8 11.8 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.16-3.48-8.4z"/></svg></a>
 
 <!-- Image viewer -->
 <dialog class="lb" id="lightbox" aria-label="Image viewer">

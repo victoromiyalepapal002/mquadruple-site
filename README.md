@@ -10,6 +10,17 @@ assets/images/      every photo on the site (replace these)
 assets/logo.svg     logo and favicon
 ```
 
+## Other sections you may want to edit (all in `index.html`, search for the comment)
+
+- **Hero text:** `<!-- ============ HERO`. Gold italic words sit inside `<em>...</em>`.
+- **Meet our founder:** `<!-- ============ FOUNDER`. Photo is `assets/images/founder.jpg` (upload a new one with the same name to replace it).
+- **Publications:** each `<article class="pub" data-tags="...">`. Copy one to add a paper. `data-tags` must be one of `sensors`, `malaria`, `bacteria`, `food` (or add a new filter button).
+- **Phone / WhatsApp:** search for `2348039272785` (the WhatsApp link) and `+234 803 927 2785`. Change every match to change the number.
+- **Social icons:** each icon is one `<a>` inside `<div class="social">`. Change the `href`, or delete the `<a>` to remove an icon. The X (Twitter) address is `https://twitter.com/mquadruple`; correct it if the handle differs.
+- **Logo:** `assets/logo.png`. **Favicon:** `assets/favicon.ico`, `favicon-32.png`, `favicon-192.png`, `apple-touch-icon.png` (replace the files, keep the names).
+- **Gallery:** each `<button class="gt ...">`. `w2` = wide, `r2` = tall. Keep the total number of cells a multiple of 4 for a tidy grid.
+- **DNA animation:** each `<canvas class="helix" ...>` is one animation (software heading, founder section, contact). Delete the line to remove it.
+
 ## Software section
 
 In `index.html`, find `<!-- ============ SOFTWARE ============`. Each `<article class="sw">` is one app (the first is shown first).
@@ -19,7 +30,6 @@ In `index.html`, find `<!-- ============ SOFTWARE ============`. Each `<article 
 - **Real screenshots:** upload to `assets/images/software/` and change the file name in `img src`. The two `.svg` files there are illustrations.
 - **GitHub button:** remove the `<!--` and `-->` around the "View code" link and paste your repo address.
 - **DNA animation:** delete the `<canvas id="helix" ...>` line to remove it.
-- `assets/logo-alt.svg` is an optional alternative logo (droplet with DNA); to use it, replace `assets/logo.svg` and `assets/favicon.svg` with it.
 
 ## Publish it
 
