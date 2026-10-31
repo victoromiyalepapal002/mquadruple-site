@@ -29,13 +29,23 @@
 <header id="site-header"></header>
 <main id="main">
 <noscript><div class="wrap" style="padding:140px 0"><h1>M-Quadruple Biotek Ltd</h1><p>Please turn on JavaScript to view this site, or email mquadruplebiotek@gmail.com.</p></div></noscript>
-<section class="page-hero">
-  <canvas class="helix helix-hero" data-theme="dark" data-rot="-0.35" aria-hidden="true"></canvas>
+<section class="page-hero sw-hero">
+  <!-- 3D DNA animation. To remove it, delete this one canvas line. -->
+  <canvas class="dna3d dna-hero" aria-hidden="true"></canvas>
   <div class="wrap">
     <p class="crumbs"><a href="index.html">Home</a> <span>/</span> Software</p>
     <p class="eyebrow">Our software</p>
     <h1>Tools that turn a photo into <em>a measurement.</em></h1>
     <p class="sub">Free-to-try web apps from our lab. Open them in any browser, no installation needed.</p>
+    <ul class="chips-row"><li>2 live apps</li><li>Free to try</li><li>Works in any browser</li><li>Anaemia app works offline</li></ul>
+  </div>
+</section>
+
+<section class="sw-bar">
+  <div class="wrap grid3">
+    <div class="hl rv"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></div><div><h3>Nothing to install</h3><p>Open the apps in any browser, on your phone or your computer.</p></div></div>
+    <div class="hl rv" style="--d:.08s"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4zM12 17a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg></div><div><h3>Photo in, numbers out</h3><p>Upload a picture of your strip and get quantified results.</p></div></div>
+    <div class="hl rv" style="--d:.16s"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></svg></div><div><h3>Take results with you</h3><p>Export CSV, PNG, JSON or PDF reports, depending on the app.</p></div></div>
   </div>
 </section>
 
@@ -46,12 +56,12 @@
      - REMOVE an app: delete its whole <article> block.
      - The first article is shown first. Add class "flip" to put the picture on the left.
      - GitHub button: remove the comment marks around the "View code" link and paste your repo address. -->
-<section class="sec software" id="software-list">
+<section class="sec software modern" id="software-list">
   <div class="wrap">
     <div class="sw-list">
 
       <!-- ===== APP 1: ANAEMIA (shown first) ===== -->
-      <article class="sw">
+      <article class="sw sw-dark" id="anaemia">
         <div class="sw-copy rv">
           <div class="sw-meta"><span class="pill pill-hot">Featured &middot; Live</span><span class="kick">Anaemia simulation &amp; blood analysis</span></div>
           <h3>&micro;Fluidic Lab Analyser Pro</h3>
@@ -108,6 +118,19 @@
         </div>
       </article>
 
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section class="sec steps-sec" id="how">
+  <div class="wrap">
+    <p class="eyebrow rv">How it works</p>
+    <h2 class="h2 rv">From a photo to <em>a result</em> in three steps.</h2>
+    <div class="steps">
+      <div class="step rv"><h3>Photograph your strip</h3><p>Take a clear photo of your &micro;PAD or blood-separation strip.</p></div>
+      <div class="step rv" style="--d:.1s"><h3>Open the app</h3><p>Launch it in your browser. The anaemia app also works offline after the first load.</p></div>
+      <div class="step rv" style="--d:.2s"><h3>Read and export</h3><p>Mark your regions or choose a mode, read the results and export them.</p></div>
     </div>
   </div>
 </section>

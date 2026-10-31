@@ -42,7 +42,7 @@
       return '<a href="' + n.href + '"' + (cur ? ' class="cur" aria-current="page"' : '') + '>' + n.label + '</a>';
     }).join('') + (S.navButton ? '<a class="cta" href="' + S.navButton.href + '">' + S.navButton.label + '</a>' : '');
     hdr.innerHTML = '<div class="wrap bar"><a class="brand" href="index.html" aria-label="' + B.name + ' ' + B.suffix + ', home">' + brandHtml() + '</a>' +
-      '<button class="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>' +
+      '<button class="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>' +
       '<nav class="nav" id="nav" aria-label="Main">' + nav + '</nav></div>';
   }
   var ctaBox = $('#cta');
@@ -107,8 +107,9 @@
     var onScroll = function () { header.classList.toggle('solid', window.scrollY > 40); };
     onScroll(); window.addEventListener('scroll', onScroll, { passive: true });
     var btn = $('.menu-btn'), navEl = $('#nav');
-    var setMenu = function (open) { navEl.classList.toggle('open', open); btn.setAttribute('aria-expanded', open ? 'true' : 'false'); header.classList.toggle('menu-open', open); };
-    btn.addEventListener('click', function () { setMenu(!navEl.classList.contains('open')); });
+    var setMenu = function (open) { navEl.classList.toggle('open', open); btn.setAttribute('aria-expanded', open ? 'true' : 'false'); btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu'); header.classList.toggle('menu-open', open); };
+    btn.addEventListener('click', function (e) { e.stopPropagation(); setMenu(!navEl.classList.contains('open')); });
+    d.addEventListener('click', function (e) { if (navEl.classList.contains('open') && !navEl.contains(e.target)) setMenu(false); });
     $$('a', navEl).forEach(function (a) { a.addEventListener('click', function () { setMenu(false); }); });
     d.addEventListener('keydown', function (e) { if (e.key === 'Escape') setMenu(false); });
   }
@@ -256,4 +257,55 @@
     }, 0.0004);
   }
   $$('canvas.mol').forEach(function (cv) { if (cv.getContext) mol(cv); });
+  /* ---------- Realistic 3D DNA (true perspective, spins, follows the pointer). <canvas class="dna3d"> ---------- */
+  function dna3d(cv) {
+    var N = 30, TURNS = 3.2, i, parts = [], mx = 0, my = 0, sx = 0, sy = 0, host = cv.parentElement;
+    for (i = 0; i < 26; i++) parts.push({ x: Math.random() * 2 - 1, y: Math.random() * 2 - 1, z: Math.random() * 2 - 1, v: 0.0003 + Math.random() * 0.0006 });
+    if (fine && !reduce && host) host.addEventListener('pointermove', function (e) {
+      var r = host.getBoundingClientRect(); mx = ((e.clientX - r.left) / r.width - 0.5) * 2; my = ((e.clientY - r.top) / r.height - 0.5) * 2;
+    });
+    animate(cv, function (ctx, W, H, ph) {
+      sx += (mx - sx) * 0.05; sy += (my - sy) * 0.05;
+      var cx = W * 0.5, cy = H * 0.5, L = H * 0.9, R = Math.min(W * 0.19, 120), F = 560;
+      var tx = 0.28 + sy * 0.18, tz = -0.32 + sx * 0.22, ctx_ = Math.cos(tx), stx = Math.sin(tx), ctz = Math.cos(tz), stz = Math.sin(tz);
+      function proj(x, y, z) {
+        var y1 = y * ctx_ - z * stx, z1 = y * stx + z * ctx_, x2 = x * ctz - y1 * stz, y2 = x * stz + y1 * ctz, sc = F / (F - z1);
+        return { x: cx + x2 * sc, y: cy + y2 * sc, z: z1 / R, s: sc };
+      }
+      var g = ctx.createRadialGradient(cx, cy, 0, cx, cy, Math.max(W, H) * 0.55);
+      g.addColorStop(0, 'rgba(127,227,200,.16)'); g.addColorStop(1, 'rgba(127,227,200,0)'); ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+      var ops = [], A = [], B = [];
+      for (i = 0; i < N; i++) {
+        var t = i / (N - 1), y = (t - 0.5) * L, a = t * TURNS * 6.2832 + ph;
+        var p1 = proj(R * Math.cos(a), y, R * Math.sin(a)), p2 = proj(-R * Math.cos(a), y, -R * Math.sin(a));
+        A.push(p1); B.push(p2);
+        ops.push({ z: (p1.z + p2.z) / 2 - 0.01, k: 'r', a: p1, b: p2 }, { z: p1.z, k: 'n', p: p1, c: '127,227,200' }, { z: p2.z, k: 'n', p: p2, c: '212,174,104' });
+        if (i) ops.push({ z: (p1.z + A[i - 1].z) / 2, k: 's', a: A[i - 1], b: p1, c: '127,227,200' }, { z: (p2.z + B[i - 1].z) / 2, k: 's', a: B[i - 1], b: p2, c: '212,174,104' });
+      }
+      parts.forEach(function (p) {
+        p.y -= p.v * 16; if (p.y < -1) { p.y = 1; p.x = Math.random() * 2 - 1; }
+        var q = proj(p.x * R * 2.6, p.y * L * 0.5, p.z * R * 2.2); ops.push({ z: q.z, k: 'd', p: q });
+      });
+      ops.sort(function (m, n) { return m.z - n.z; });
+      ctx.lineCap = 'round';
+      ops.forEach(function (o) {
+        var f;
+        if (o.k === 'r') {
+          f = Math.min(1, Math.max(0, (o.z + 1.2) / 2.4)); var gr = ctx.createLinearGradient(o.a.x, o.a.y, o.b.x, o.b.y);
+          gr.addColorStop(0, 'rgba(127,227,200,.9)'); gr.addColorStop(0.5, 'rgba(255,255,255,.55)'); gr.addColorStop(1, 'rgba(212,174,104,.9)');
+          ctx.globalAlpha = 0.18 + 0.4 * f; ctx.strokeStyle = gr; ctx.lineWidth = 1.6 * o.a.s; ctx.beginPath(); ctx.moveTo(o.a.x, o.a.y); ctx.lineTo(o.b.x, o.b.y); ctx.stroke();
+        } else if (o.k === 's') {
+          f = Math.min(1, Math.max(0, (o.z + 1.2) / 2.4)); ctx.globalAlpha = 0.3 + 0.7 * f; ctx.strokeStyle = 'rgb(' + o.c + ')'; ctx.lineWidth = (2 + 3.5 * f) * o.a.s; ctx.beginPath(); ctx.moveTo(o.a.x, o.a.y); ctx.lineTo(o.b.x, o.b.y); ctx.stroke();
+        } else if (o.k === 'n') {
+          f = Math.min(1, Math.max(0, (o.z + 1.2) / 2.4)); var r = (4 + 6 * f) * o.p.s; ctx.globalAlpha = 0.35 + 0.65 * f;
+          ctx.fillStyle = 'rgba(' + o.c + ',.18)'; ctx.beginPath(); ctx.arc(o.p.x, o.p.y, r * 2.3, 0, 6.2832); ctx.fill();
+          ctx.fillStyle = 'rgb(' + o.c + ')'; ctx.beginPath(); ctx.arc(o.p.x, o.p.y, r, 0, 6.2832); ctx.fill();
+          ctx.fillStyle = 'rgba(255,255,255,.6)'; ctx.beginPath(); ctx.arc(o.p.x - r * 0.3, o.p.y - r * 0.32, r * 0.3, 0, 6.2832); ctx.fill();
+        } else {
+          ctx.globalAlpha = 0.15 + 0.35 * Math.min(1, Math.max(0, (o.z + 2) / 4)); ctx.fillStyle = '#fff'; ctx.beginPath(); ctx.arc(o.p.x, o.p.y, 1.2 * o.p.s + 0.4, 0, 6.2832); ctx.fill();
+        }
+      });
+    }, 0.00085);
+  }
+  $$('canvas.dna3d').forEach(function (cv) { if (cv.getContext) dna3d(cv); });
 })();
