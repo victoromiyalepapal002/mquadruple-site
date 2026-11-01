@@ -26,6 +26,7 @@ window.GALLERY = [
   { src: "assets/images/gallery-pipetting.jpg",    caption: "Bench work in the laboratory",          alt: "Researchers in white coats loading samples with pipettes", size: "", position: "50% 28%" },
   { src: "assets/images/gallery-lab-room.jpg",     caption: "The team at work in the laboratory",    alt: "Team members working at the benches in the laboratory", size: "", position: "50% 55%" },
 
+  { src: "assets/images/gallery-pipette-bench.jpg", caption: "Pipetting at the laboratory bench", alt: "A researcher in a white coat and mask pipetting at a laboratory bench", size: "tall", position: "50% 30%" },
   { src: "assets/images/gallery-bench.jpg",        caption: "Preparing a sample at the bench",       alt: "A researcher in a mask and white coat at a laboratory bench", size: "wide", position: "50% 30%" },
   { src: "assets/images/gallery-samples.jpg",      caption: "Transporting samples",                  alt: "A researcher carrying a labelled sample cooler box", size: "tall" },
   { src: "assets/images/gallery-review.jpg",       caption: "Reviewing results together",            alt: "Two researchers in white coats looking at a phone", size: "wide", position: "50% 30%" },

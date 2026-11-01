@@ -15,7 +15,7 @@ window.SITE = {
     phone: "+234 803 927 2785",        // shown on the site
     whatsapp: "2348039272785",         // digits only, with country code, no + sign
     whatsappText: "Hello M-Quadruple Biotek, I would like to make an enquiry.",
-    address: "Academic Building, Ipinsa, Akure,<br>Ondo State, Nigeria",
+    address: "Akure, Ondo State",
     // Optional: paste a Formspree address (https://formspree.io/f/xxxx) so the form sends without an email app
     formEndpoint: ""
   },

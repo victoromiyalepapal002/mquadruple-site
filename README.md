@@ -35,7 +35,7 @@ A fast static site: HTML pages, one CSS file and a little JavaScript. No build s
 
 **GitHub "View code" button:** in `software.html`, remove the `<!--` and `-->` around the "View code" link and paste your repository address.
 
-**Add a team photo for Dr Adeniyi:** upload it to `assets/images/`, then in `team.html` follow the comment above the "MANAGER" section.
+**Dr Adeniyi's photo:** replace `assets/images/profile-adeniyi.jpg` (same file name) to change it.
 
 **Change the logo:** replace `assets/logo.png` (keep the name). **Favicon:** replace `assets/favicon.ico`, `favicon-32.png`, `favicon-192.png`, `apple-touch-icon.png`.
 
