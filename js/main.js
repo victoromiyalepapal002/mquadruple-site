@@ -25,8 +25,8 @@
     tel: '<svg class="st" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>'
   };
   var waUrl = 'https://wa.me/' + (C.whatsapp || '') + '?text=' + encodeURIComponent(C.whatsappText || '');
-  function socialHtml() {
-    return '<div class="social">' + (S.social || []).map(function (s) {
+  function socialHtml(list) {
+    return '<div class="social">' + (list || S.social || []).map(function (s) {
       var h = s.href || (s.icon === 'wa' ? waUrl : s.icon === 'mail' ? 'mailto:' + C.email : s.icon === 'tel' ? 'tel:' + String(C.phone || '').replace(/\s/g, '') : '#');
       return '<a href="' + h + '"' + ext(h) + ' aria-label="' + s.label + '" title="' + s.label + '">' + I[s.icon] + '</a>';
     }).join('') + '</div>';
@@ -63,7 +63,7 @@
   d.body.appendChild(wa);
 
   // fill placeholders anywhere in a page
-  $$('[data-social]').forEach(function (el) { el.outerHTML = socialHtml(); });
+  $$('[data-social]').forEach(function (el) { var k = el.getAttribute('data-social'); el.outerHTML = socialHtml(k ? S[k] : null); });
   $$('[data-wa]').forEach(function (el) { el.href = waUrl; el.target = '_blank'; el.rel = 'noopener'; if (el.hasAttribute('data-icon')) el.insertAdjacentHTML('afterbegin', I.wa); });
   $$('[data-email]').forEach(function (el) { el.href = 'mailto:' + C.email; el.textContent = C.email; });
   $$('[data-phone]').forEach(function (el) { el.href = 'tel:' + String(C.phone).replace(/\s/g, ''); el.textContent = C.phone; });

@@ -12,8 +12,8 @@ window.SITE = {
 
   contact: {
     email: "mquadruplebiotek@gmail.com",
-    phone: "+234 803 927 2785",        // shown on the site
-    whatsapp: "2348039272785",         // digits only, with country code, no + sign
+    phone: "+234 704 847 4903",        // shown on the site
+    whatsapp: "2347048474903",         // digits only, with country code, no + sign
     whatsappText: "Hello M-Quadruple Biotek, I would like to make an enquiry.",
     address: "Akure, Ondo State",
     // Optional: paste a Formspree address (https://formspree.io/f/xxxx) so the form sends without an email app
@@ -30,6 +30,12 @@ window.SITE = {
     { icon: "sch",  label: "Google Scholar", href: "https://scholar.google.com/citations?user=0CtIxzgAAAAJ&hl=en" },
     { icon: "mail", label: "Email" },
     { icon: "tel",  label: "Call" }
+  ],
+
+  /* Social icons for Dr Adeniyi (Team page, Manager section). Same rules as above. */
+  managerSocial: [
+    { icon: "in",  label: "LinkedIn",       href: "https://www.linkedin.com/in/kayode-omotayo-adeniyi-73534a54/" },
+    { icon: "sch", label: "Google Scholar", href: "https://scholar.google.com/citations?user=pP6oMIYAAAAJ&hl=en" }
   ],
 
   /* Top menu. Each item opens its own page. */

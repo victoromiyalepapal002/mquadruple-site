@@ -25,7 +25,7 @@ A fast static site: HTML pages, one CSS file and a little JavaScript. No build s
 
 ## Common jobs
 
-**Change the phone number / WhatsApp:** `js/site.js` -> `contact` (`phone` is shown, `whatsapp` is digits only, e.g. `2348039272785`).
+**Change the phone number / WhatsApp:** `js/site.js` -> `contact` (`phone` is shown, `whatsapp` is digits only, e.g. `2347048474903`).
 
 **Add / replace / remove a gallery photo:** upload the picture to `assets/images/`, then edit its line in `js/gallery-data.js`. To replace a photo keep the same file name. Photos under about 150 KB load fastest.
 
