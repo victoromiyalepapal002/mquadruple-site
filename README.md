@@ -50,6 +50,5 @@ A fast static site: HTML pages, one CSS file and a little JavaScript. No build s
 ## Before going live
 
 - **Link previews:** in each page's `<head>`, change `og:image` to the full address of `assets/og-image.png` once your domain is live.
-- **X (Twitter) link:** `js/site.js` uses `https://twitter.com/mquadruple`. Correct it if the handle is different, and add GitHub if you like.
 - **Contact form:** it opens the visitor's email app. To send directly, put a Formspree address in `contact.formEndpoint` in `js/site.js`.
 - **Founder photo:** `assets/images/founder.jpg` shows a lab coat reading "Ricores University" and posters with garbled text. Consider replacing it with a real photo (same file name).
