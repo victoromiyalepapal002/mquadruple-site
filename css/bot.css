@@ -2,8 +2,12 @@
 #bot .bot-panel{position:fixed;right:18px;bottom:158px;z-index:70;width:min(392px,calc(100vw - 36px));height:min(580px,calc(100dvh - 240px));display:flex;flex-direction:column;overflow:hidden;border-radius:26px;background:var(--paper);color:var(--ink);border:1px solid rgba(11,29,43,.12);box-shadow:0 40px 90px -30px rgba(5,12,19,.65),0 0 0 1px rgba(255,255,255,.4) inset;opacity:0;visibility:hidden;transform:translateY(18px) scale(.97);transform-origin:bottom right;transition:opacity .28s,transform .35s cubic-bezier(.2,.8,.2,1),visibility 0s .35s}
 #bot.open .bot-panel{opacity:1;visibility:visible;transform:none;transition:opacity .28s,transform .35s cubic-bezier(.2,.8,.2,1)}
 .bot-head{position:relative;display:flex;align-items:center;gap:12px;padding:16px 16px 16px 18px;color:var(--paper);background:radial-gradient(70% 140% at 100% 0%,rgba(31,143,122,.55),transparent 70%),linear-gradient(160deg,var(--ink-3),var(--ink))}
-.bot-av{flex:none;display:grid;place-items:center;width:46px;height:46px;border-radius:14px;background:#fff;box-shadow:0 8px 20px -8px rgba(0,0,0,.6)}
-.bot-av img{width:34px;height:auto}
+.bot-av{flex:none;position:relative;display:grid;place-items:center;width:50px;height:50px;border-radius:16px;background:radial-gradient(80% 80% at 30% 20%,rgba(127,227,200,.4),rgba(127,227,200,.08)),var(--ink-2);border:1px solid rgba(127,227,200,.45);box-shadow:0 0 0 0 rgba(127,227,200,.5),0 10px 24px -10px rgba(0,0,0,.7);animation:botring 3s ease-out infinite}
+.bot-av .rb{width:40px;height:40px}
+@keyframes botring{70%{box-shadow:0 0 0 9px rgba(127,227,200,0),0 10px 24px -10px rgba(0,0,0,.7)}100%{box-shadow:0 0 0 0 rgba(127,227,200,0),0 10px 24px -10px rgba(0,0,0,.7)}}
+#bot.busy .rb .rb-ball{animation-duration:.45s}
+#bot.busy .rb .rb-eyes ellipse{animation:rbscan .9s ease-in-out infinite}
+@keyframes rbscan{0%,100%{transform:translateX(-1.4px)}50%{transform:translateX(1.4px)}}
 .bot-ttl{flex:1;min-width:0;display:flex;flex-direction:column}
 .bot-ttl b{font-family:var(--serif);font-size:20px;line-height:1.1;font-weight:700}
 .bot-ttl small{display:flex;align-items:center;gap:7px;margin-top:3px;font-size:12.5px;color:rgba(247,244,236,.78)}
@@ -43,4 +47,4 @@ html.bot-lock{overflow:hidden}
   #bot .bot-panel{left:0;right:0;bottom:0;width:100%;height:min(88dvh,720px);border-radius:26px 26px 0 0;transform:translateY(40px)}
   #bot.open .bot-panel{transform:none}
 }
-@media(prefers-reduced-motion:reduce){#bot .bot-panel,.bot-m{transition:none;animation:none}.bot-ttl small i{animation:none}}
+@media(prefers-reduced-motion:reduce){#bot .bot-panel,.bot-m,.bot-av{transition:none;animation:none}.bot-ttl small i{animation:none}}

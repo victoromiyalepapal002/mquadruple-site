@@ -543,3 +543,27 @@ html.bot-lock .wa-float,html.bot-lock #bot-fab,html.bot-lock #bot-teaser{display
 @media(prefers-reduced-motion:reduce){#bot-fab::after{animation:none}}
 @keyframes botdot{70%{box-shadow:0 0 0 7px rgba(127,227,200,0)}100%{box-shadow:0 0 0 0 rgba(127,227,200,0)}}
 @keyframes botin{from{opacity:0;transform:translateY(8px)}}
+
+/* ---------- animated robot (launcher + chat header) ---------- */
+.rb{overflow:visible}
+.rb .rb-head{fill:#f4f1e8;stroke:none}
+.rb .rb-ear{fill:var(--mint);stroke:none}
+.rb .rb-face{fill:#0B1D2B;stroke:none}
+.rb .rb-eyes ellipse{fill:var(--mint);stroke:none}
+.rb .rb-mouth{fill:none;stroke:var(--mint);stroke-width:2.2;stroke-linecap:round}
+.rb .rb-ant path{fill:none;stroke:#f4f1e8;stroke-width:2.4;stroke-linecap:round}
+.rb .rb-ball{fill:var(--gold);stroke:none;transform-box:fill-box;transform-origin:center;animation:rbball 1.8s ease-in-out infinite}
+.rb .rb-eyes{transform-box:fill-box;transform-origin:center;animation:rbblink 5s infinite}
+.rb .rb-mouth{transform-box:fill-box;transform-origin:center;animation:rbtalk 5s ease-in-out infinite}
+.rb .rb-ear{transform-box:fill-box;transform-origin:center;animation:rbear 2.6s ease-in-out infinite}
+.rb{animation:rbfloat 3.4s ease-in-out infinite;transform-origin:50% 90%}
+#bot-fab svg.rb{width:34px;height:34px;fill:initial;stroke:initial;stroke-width:initial}
+#bot-fab .rb .rb-ball{fill:var(--gold)}
+#bot-fab:hover .rb{animation:rbwave .9s ease-in-out infinite}
+@keyframes rbfloat{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-2.5px) rotate(-3deg)}}
+@keyframes rbwave{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(8deg) translateY(-2px)}}
+@keyframes rbblink{0%,90%,100%{transform:scaleY(1)}93%{transform:scaleY(.08)}96%{transform:scaleY(1)}}
+@keyframes rbball{0%,100%{transform:scale(1);filter:drop-shadow(0 0 0 rgba(212,174,104,0))}50%{transform:scale(1.35);filter:drop-shadow(0 0 5px rgba(212,174,104,.95))}}
+@keyframes rbtalk{0%,60%,100%{transform:scaleY(1)}70%{transform:scaleY(1.7)}80%{transform:scaleY(.8)}90%{transform:scaleY(1.4)}}
+@keyframes rbear{0%,100%{transform:scaleY(1)}50%{transform:scaleY(1.18)}}
+@media(prefers-reduced-motion:reduce){.rb,.rb *{animation:none!important}}

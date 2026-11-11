@@ -65,7 +65,7 @@
   /* ---------- chat assistant: only a small button now; the rest loads when it is first needed ---------- */
   var botRoot = d.createElement('div'); botRoot.id = 'bot';
   var botFab = d.createElement('button'); botFab.id = 'bot-fab'; botFab.type = 'button'; botFab.setAttribute('aria-label', 'Chat with our assistant'); botFab.setAttribute('aria-expanded', 'false');
-  botFab.innerHTML = '<svg class="b1" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-8l-5 4v-4H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z"/><circle cx="8.5" cy="11" r="1.1"/><circle cx="12" cy="11" r="1.1"/><circle cx="15.5" cy="11" r="1.1"/></svg><svg class="b2" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg><span>Ask us</span>';
+  botFab.innerHTML = '<svg class="rb b1" viewBox="0 0 48 48" aria-hidden="true"><g class="rb-ant"><path d="M24 14V9"/><circle class="rb-ball" cx="24" cy="6.5" r="3"/></g><rect class="rb-ear" x="3.5" y="23" width="5" height="10" rx="2.5"/><rect class="rb-ear" x="39.5" y="23" width="5" height="10" rx="2.5"/><rect class="rb-head" x="7" y="14" width="34" height="27" rx="10"/><rect class="rb-face" x="11.5" y="18.5" width="25" height="18" rx="7"/><g class="rb-eyes"><ellipse cx="18.5" cy="26" rx="2.7" ry="3.3"/><ellipse cx="29.5" cy="26" rx="2.7" ry="3.3"/></g><path class="rb-mouth" d="M20 32q4 3.2 8 0"/></svg><svg class="b2" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg><span>Ask us</span>';
   d.body.appendChild(botRoot); d.body.appendChild(botFab);
   var botLoading = false;
   function loadBot(then) {

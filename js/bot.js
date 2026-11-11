@@ -46,10 +46,12 @@
     return bs >= 1.0 ? best : null;
   }
 
+  var ROBOT = '<svg class="rb" viewBox="0 0 48 48" aria-hidden="true"><g class="rb-ant"><path d="M24 14V9"/><circle class="rb-ball" cx="24" cy="6.5" r="3"/></g><rect class="rb-ear" x="3.5" y="23" width="5" height="10" rx="2.5"/><rect class="rb-ear" x="39.5" y="23" width="5" height="10" rx="2.5"/><rect class="rb-head" x="7" y="14" width="34" height="27" rx="10"/><rect class="rb-face" x="11.5" y="18.5" width="25" height="18" rx="7"/><g class="rb-eyes"><ellipse cx="18.5" cy="26" rx="2.7" ry="3.3"/><ellipse cx="29.5" cy="26" rx="2.7" ry="3.3"/></g><path class="rb-mouth" d="M20 32q4 3.2 8 0"/></svg>';
+
   /* ---------- panel markup ---------- */
   root.innerHTML =
     '<div class="bot-panel" role="dialog" aria-label="' + esc(D.name) + '" aria-modal="false">' +
-      '<header class="bot-head"><span class="bot-av"><img src="' + esc(B.logo || 'assets/logo.png') + '" alt="" width="40" height="31"></span>' +
+      '<header class="bot-head"><span class="bot-av">'+ ROBOT +'</span>' +
         '<div class="bot-ttl"><b>' + esc(D.name) + '</b><small><i></i>' + esc(D.status) + '</small></div>' +
         '<button class="bot-x" type="button" aria-label="Close chat">&times;</button></header>' +
       '<div class="bot-log" role="log" aria-live="polite"></div>' +
@@ -93,8 +95,9 @@
 
   var busy = false;
   function typing(cb) {
+    root.classList.add('busy');
     var t = d.createElement('div'); t.className = 'bot-m bot typing'; t.innerHTML = '<span></span><span></span><span></span>'; log.appendChild(t); scroll();
-    setTimeout(function () { t.remove(); cb(); }, reduce ? 0 : 420 + Math.random() * 260);
+    setTimeout(function () { t.remove(); root.classList.remove('busy'); cb(); }, reduce ? 0 : 420 + Math.random() * 260);
   }
   function answer(t, userText) {
     busy = true; chips.innerHTML = '';
