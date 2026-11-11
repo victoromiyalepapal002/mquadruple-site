@@ -52,3 +52,6 @@ A fast static site: HTML pages, one CSS file and a little JavaScript. No build s
 - **Link previews:** in each page's `<head>`, change `og:image` to the full address of `assets/og-image.png` once your domain is live.
 - **Contact form:** it opens the visitor's email app. To send directly, put a Formspree address in `contact.formEndpoint` in `js/site.js`.
 - **Founder photo:** `assets/images/founder.jpg` shows a lab coat reading "Ricores University" and posters with garbled text. Consider replacing it with a real photo (same file name).
+
+## Chat assistant
+A small "Ask us" button on every page opens a chat assistant. It answers from the facts in `js/bot-data.js` only (no outside service, no cost). To change an answer, edit its `a:` text there; to add a question, copy one topic block and add the words people might use in `k:`. Phone, email and WhatsApp in its answers come from `js/site.js`. Questions it cannot answer offer to send the visitor's question to you on WhatsApp or email. It loads after the page has finished loading, so it does not slow the site.

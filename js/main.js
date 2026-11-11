@@ -62,6 +62,35 @@
   wa.className = 'wa-float'; wa.href = waUrl; wa.target = '_blank'; wa.rel = 'noopener'; wa.setAttribute('aria-label', 'Chat on WhatsApp'); wa.innerHTML = I.wa;
   d.body.appendChild(wa);
 
+  /* ---------- chat assistant: only a small button now; the rest loads when it is first needed ---------- */
+  var botRoot = d.createElement('div'); botRoot.id = 'bot';
+  var botFab = d.createElement('button'); botFab.id = 'bot-fab'; botFab.type = 'button'; botFab.setAttribute('aria-label', 'Chat with our assistant'); botFab.setAttribute('aria-expanded', 'false');
+  botFab.innerHTML = '<svg class="b1" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-8l-5 4v-4H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z"/><circle cx="8.5" cy="11" r="1.1"/><circle cx="12" cy="11" r="1.1"/><circle cx="15.5" cy="11" r="1.1"/></svg><svg class="b2" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg><span>Ask us</span>';
+  d.body.appendChild(botRoot); d.body.appendChild(botFab);
+  var botLoading = false;
+  function loadBot(then) {
+    if (botRoot.getAttribute('data-ready')) { if (then) then(); return; }
+    if (then) botRoot.setAttribute('data-want-open', '1');
+    if (botLoading) return; botLoading = true;
+    var l = d.createElement('link'); l.rel = 'stylesheet'; l.href = 'css/bot.css'; d.head.appendChild(l);
+    var s1 = d.createElement('script'); s1.src = 'js/bot-data.js';
+    s1.onload = function () { var s2 = d.createElement('script'); s2.src = 'js/bot.js'; d.body.appendChild(s2); };
+    d.body.appendChild(s1);
+  }
+  botFab.addEventListener('click', function () { if (!botRoot.getAttribute('data-ready')) { loadBot(true); } });
+  ['pointerenter', 'focus', 'touchstart'].forEach(function (ev) { botFab.addEventListener(ev, function () { loadBot(); }, { once: true, passive: true }); });
+  (window.requestIdleCallback || function (f) { setTimeout(f, 3500); })(function () { setTimeout(function () { loadBot(); }, 2500); });
+  /* a gentle one-time hint after a few seconds */
+  try {
+    if (!sessionStorage.getItem('mq-hint')) setTimeout(function () {
+      if (botRoot.classList.contains('open') || window.innerWidth < 360) return;
+      var tz = d.createElement('button'); tz.id = 'bot-teaser'; tz.type = 'button'; tz.innerHTML = '<b>Need help?</b> Ask about our software, training or research.';
+      tz.addEventListener('click', function () { tz.remove(); botFab.click(); });
+      d.body.appendChild(tz); sessionStorage.setItem('mq-hint', '1');
+      setTimeout(function () { if (tz.parentNode) tz.remove(); }, 9000);
+    }, 6000);
+  } catch (e) {}
+
   // fill placeholders anywhere in a page
   $$('[data-social]').forEach(function (el) { var k = el.getAttribute('data-social'); el.outerHTML = socialHtml(k ? S[k] : null); });
   $$('[data-wa]').forEach(function (el) { el.href = waUrl; el.target = '_blank'; el.rel = 'noopener'; if (el.hasAttribute('data-icon')) el.insertAdjacentHTML('afterbegin', I.wa); });
