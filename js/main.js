@@ -90,15 +90,37 @@
   }
 
   /* ---------- gallery (from js/gallery-data.js) ---------- */
+  function galTile(g) {
+    var cls = g.size === 'big' ? ' w2 r2' : g.size === 'full' ? ' w4' : g.size === 'wide' ? ' w2' : g.size === 'tall' ? ' r2' : '';
+    var cap = (g.tag ? g.tag + ': ' : '') + (g.caption || '');
+    return '<button class="gt' + cls + ' rv" data-full="' + g.src + '" data-alt="' + (g.alt || '') + '" data-cap="' + (g.caption || '') + '">' +
+      '<img src="' + g.src + '" alt="' + (g.alt || '') + '" loading="lazy" decoding="async"' + (g.position ? ' style="object-position:' + g.position + '"' : '') + '>' +
+      (g.tag ? '<em class="gtag">' + g.tag + '</em>' : '') +
+      (g.caption ? '<span>' + g.caption + '</span>' : '') + '</button>';
+  }
   $$('[data-gallery]').forEach(function (box) {
-    var homeOnly = box.getAttribute('data-gallery') === 'home';
-    var list = (window.GALLERY || []).filter(function (g) { return !homeOnly || g.home; });
-    box.innerHTML = list.map(function (g) {
-      var cls = g.size === 'big' ? ' w2 r2' : g.size === 'wide' ? ' w2' : g.size === 'tall' ? ' r2' : '';
-      return '<button class="gt' + cls + ' rv" data-full="' + g.src + '" data-alt="' + (g.alt || '') + '" data-cap="' + (g.caption || '') + '">' +
-        '<img src="' + g.src + '" alt="' + (g.alt || '') + '" loading="lazy" decoding="async"' + (g.position ? ' style="object-position:' + g.position + '"' : '') + '>' +
-        (g.caption ? '<span>' + g.caption + '</span>' : '') + '</button>';
-    }).join('');
+    var mode = box.getAttribute('data-gallery'), all = window.GALLERY || [];
+    if (mode === 'groups') {
+      var cats = window.GALLERY_CATS || [];
+      var bar = $('[data-gallery-filters]');
+      box.innerHTML = cats.map(function (c) {
+        var items = all.filter(function (g) { return g.cat === c.key; });
+        return '<section class="gal-group" id="g-' + c.key + '" data-cat="' + c.key + '"><header class="gal-head"><h2>' + c.title + '</h2><p>' + (c.note || '') + '</p><span class="gal-n">' + items.length + (items.length === 1 ? ' photo' : ' photos') + '</span></header>' +
+          (items.length ? '<div class="gal">' + items.map(galTile).join('') + '</div>' : '<p class="gal-empty">No photos here yet. Add one in js/gallery-data.js with cat: "' + c.key + '".</p>') + '</section>';
+      }).join('');
+      if (bar) {
+        bar.innerHTML = '<button class="chip" data-g="all" aria-pressed="true">All photos</button>' + cats.map(function (c) { return '<button class="chip" data-g="' + c.key + '" aria-pressed="false">' + c.title + '</button>'; }).join('');
+        var show = function (k) {
+          $$('button', bar).forEach(function (x) { x.setAttribute('aria-pressed', x.getAttribute('data-g') === k ? 'true' : 'false'); });
+          $$('.gal-group', box).forEach(function (s) { s.hidden = k !== 'all' && s.getAttribute('data-cat') !== k; });
+          try { history.replaceState(null, '', k === 'all' ? location.pathname : '#' + k); } catch (e) {}
+        };
+        bar.addEventListener('click', function (e) { var t = e.target.closest('button'); if (t) show(t.getAttribute('data-g')); });
+        var h = (location.hash || '').slice(1); if (cats.some(function (c) { return c.key === h; })) show(h);
+      }
+    } else {
+      box.innerHTML = all.filter(function (g) { return mode !== 'home' || g.home; }).map(galTile).join('');
+    }
   });
 
   /* ---------- header solid on scroll + mobile menu ---------- */

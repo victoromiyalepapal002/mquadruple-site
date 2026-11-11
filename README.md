@@ -27,7 +27,7 @@ A fast static site: HTML pages, one CSS file and a little JavaScript. No build s
 
 **Change the phone number / WhatsApp:** `js/site.js` -> `contact` (`phone` is shown, `whatsapp` is digits only, e.g. `2347048474903`).
 
-**Add / replace / remove a gallery photo:** upload the picture to `assets/images/`, then edit its line in `js/gallery-data.js`. To replace a photo keep the same file name. Photos under about 150 KB load fastest.
+**Add / replace / remove a gallery photo:** upload the picture to `assets/images/`, then edit its line in `js/gallery-data.js`. To replace a photo keep the same file name. Photos under about 150 KB load fastest. Each line also has `cat` (which of the four groups) and `tag` (the label on the photo; write any words you like, e.g. "Biosensor" for our lab).
 
 **Add a publication:** copy one `{ ... },` block in `js/publications-data.js` to the top and edit it.
 
