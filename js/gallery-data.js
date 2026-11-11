@@ -9,7 +9,8 @@
      cat      which group it goes in:  "biosensor"  "microbiology"  "molecular"  "training"
      tag      the small label written on the photo. Write ANY words you like.
               (Photos taken in our own lab use "Biosensor".)
-     size     "" normal, "wide" 2 across, "tall" 2 down, "big" 2 across and 2 down, "full" the whole row
+     video    optional, a video file in assets/video/ (then src is its thumbnail picture)
+   size     "" normal, "wide" 2 across, "tall" 2 down, "big" 2 across and 2 down, "full" the whole row
      position optional, which part of the photo stays in view, e.g. "50% 20%"
 
    To ADD a photo:   upload it to assets/images/ (JPG, about 1000 px wide, under 150 KB),
@@ -23,7 +24,7 @@
 window.GALLERY_CATS = [
   { key: "biosensor",    title: "Biosensor and diagnostics", note: "Paper microfluidics, test strips and bench work in our laboratory." },
   { key: "microbiology", title: "Microbiology",              note: "Culture plates, Salmonella and Shigella work, and sample handling." },
-  { key: "molecular",    title: "Molecular biology",         note: "Photos for this group will be added soon." },
+  { key: "molecular",    title: "Molecular biology",         note: "PCR and other molecular work at the bench." },
   { key: "training",     title: "Training and conferences",  note: "Workshops, training sessions and conferences." }
 ];
 
@@ -51,7 +52,9 @@ window.GALLERY = [
   { src: "assets/images/gallery-sample-prep.jpg",  cat: "microbiology", tag: "Sample preparation", caption: "Sample preparation",              alt: "Grinding a sample with a mortar and pestle", size: "", home: true },
   { src: "assets/images/gallery-samples.jpg",      cat: "microbiology", tag: "Sample collection", caption: "Transporting samples",             alt: "A researcher carrying a labelled sample cooler box", size: "" },
 
-  /* ---- Molecular biology: add photos here with  cat: "molecular" ---- */
+  /* ---- Molecular biology: add photos here with  cat: "molecular" ----
+     A VIDEO line also has  video: "assets/video/....mp4"  and src is its thumbnail picture. */
+  { src: "assets/video/working-on-pcr-poster.jpg", video: "assets/video/working-on-pcr.mp4", cat: "molecular", tag: "PCR", caption: "Working on PCR", alt: "Video: a researcher running PCR on a thermal cycler", size: "tall" },
 
   /* ---- Training and conferences ---- */
   { src: "assets/images/gallery-training.jpg",     cat: "training", tag: "Training with JR Biotek", caption: "Training session with JR Biotek", alt: "Researchers practising pipetting in a training session", size: "wide", home: true },

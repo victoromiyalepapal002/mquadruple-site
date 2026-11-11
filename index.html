@@ -210,6 +210,31 @@
   </div>
 </section>
 
+<!-- ============ VIDEO ============
+     To change the video: replace assets/video/working-on-pcr.mp4 and working-on-pcr-poster.jpg (keep the names),
+     or change the src below. Keep videos short and under about 8 MB so the page stays fast. -->
+<section class="sec dark vid-sec" id="video">
+  <canvas class="helix helix-bg" data-theme="dark" data-rot="-0.9" aria-hidden="true"></canvas>
+  <div class="wrap vid-grid">
+    <div class="vid-copy rv">
+      <p class="eyebrow">In the lab</p>
+      <h2 class="h2">Working on <em>PCR.</em></h2>
+      <p class="lead">A look at molecular work at the bench: loading samples and running a PCR reaction on a thermal cycler.</p>
+      <ul class="chips-row"><li>Molecular biology</li><li>PCR</li><li>36 seconds</li></ul>
+      <div class="more" style="margin-top:34px"><a class="btn btn-mint" href="gallery.html#molecular">More from the gallery</a></div>
+    </div>
+    <div class="vid-stage rv" style="--d:.1s">
+      <figure class="vframe" data-tilt="5">
+        <video controls playsinline preload="none" poster="assets/video/working-on-pcr-poster.jpg" width="368" height="656" aria-label="Video: working on PCR in the laboratory">
+          <source src="assets/video/working-on-pcr.mp4" type="video/mp4">
+        </video>
+        <button class="vplay" type="button" aria-label="Play video"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></button>
+        <span class="vbadge">PCR</span>
+      </figure>
+    </div>
+  </div>
+</section>
+
 <!-- ============ GALLERY (preview, from js/gallery-data.js) ============ -->
 <section class="sec" id="gallery">
   <div class="wrap">
@@ -261,7 +286,7 @@
 
 <!-- Image viewer -->
 <dialog class="lb" id="lightbox" aria-label="Image viewer">
-  <figure><button class="lb-x" data-close aria-label="Close image">&times;</button><img alt="" width="1000" height="700"><figcaption></figcaption></figure>
+  <figure><button class="lb-x" data-close aria-label="Close image">&times;</button><img alt="" width="1000" height="700"><video controls playsinline preload="metadata" hidden></video><figcaption></figcaption></figure>
 </dialog>
 </body>
 </html>
